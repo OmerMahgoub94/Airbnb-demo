@@ -1,0 +1,35 @@
+import Header from "../components/Header"
+import Footer from "../components/Footer"
+import { useRouter } from "next/dist/client/router";
+
+function search() {
+    const router = useRouter();
+    const { location, startDate, endDate, numOfGuests } = router.query;
+
+
+    return (
+        <div>
+            <Header />
+
+            <main className="flex">
+                <section className="flex-grow pt-14 px-6">
+                    <p className="text-gray-600 text-xs">300+ Stays for {numOfGuests} guests</p>
+
+                    <h1 className="text-3xl font-semibold mt-2 mb-6">Stays in {location}</h1>
+
+                    <div className="hidden md:inline-flex space-x-3 mb-5 text-gray-800 whitespace-nowrap">
+                        <p className="button">Free Cancellation</p>
+                        <p className="button">Type of Place</p>
+                        <p className="button">Price</p>
+                        <p className="button">Rooms and Beds</p>
+                        <p className="button">More Filters</p>
+                    </div>
+                </section>
+            </main >
+            <Footer />
+
+        </div >
+    )
+}
+
+export default search
