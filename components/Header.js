@@ -12,7 +12,7 @@ import { useRouter } from 'next/dist/client/router';
 
 
 
-function Header() {
+function Header({ placeholder }) {
     const [searchInput, setSearchInput] = useState('');
     const [numOfGuests, setNumOfGuests] = useState(1);
     const [startDate, setStartDate] = useState(new Date())
@@ -29,7 +29,8 @@ function Header() {
     const handleSelect = (ranges) => {
         setStartDate(ranges.selection.startDate)
         setEndDate(ranges.selection.endDate)
-        console.log(ranges);
+
+        console.log(endDate);
     }
 
     const resetInput = () => {
@@ -40,12 +41,14 @@ function Header() {
         router.push({
             pathname: '/search',
             query: {
+
                 location: searchInput,
                 startDate: startDate.toISOString(),
-                endDate: endDate.toISOString,
+                endDate: endDate.toISOString(),
                 numOfGuests,
             }
         })
+        setSearchInput('');
     }
 
     return (
@@ -68,10 +71,11 @@ function Header() {
             {/* Middle for search */}
             <div className="flex items-center md:border-2 rounded-full py-2 md:shadow-sm">
                 <input
+                    placeholder={placeholder || "Start your search"}
                     value={searchInput} onChange={e => setSearchInput(e.target.value)}
                     className="flex-grow pl-5 bg-transparent 
                     outline-none text-gray-600 placeholder-gray-400"
-                    type="text" placeholder="Start your search" />
+                    type="text" />
                 <SearchIcon
                     className="hidden md:inline-flex h-8 mx-3
                     bg-red-400 text-white rounded-full p-2 cursor-pointer"
