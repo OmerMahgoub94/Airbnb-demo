@@ -3,6 +3,8 @@ import Footer from "../components/Footer"
 import { useRouter } from "next/dist/client/router";
 import { format } from "date-fns";
 import InfoCard from "../components/InfoCard";
+import Map from "../components/Map";
+import getCenter from "geolib/es/getCenter"
 
 function search({ searchResults }) {
     const router = useRouter();
@@ -44,6 +46,10 @@ function search({ searchResults }) {
                         />
                     ))}
                 </section>
+
+                <section className="hidden lg:inline-flex lg:min-w-[600px]">
+                    <Map searchResults={searchResults} />
+                </section>
             </main >
             <Footer />
 
@@ -56,6 +62,7 @@ export default search
 export async function getServerSideProps() {
     const searchResults = await fetch('https://links.papareact.com/isz')
         .then(res => res.json());
+
 
     console.log(searchResults)
     return {

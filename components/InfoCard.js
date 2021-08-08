@@ -7,7 +7,7 @@ function InfoCard({ img, location, title, description, star, price, total }) {
         <div className="py-7 px-2 pr-4 flex cursor-pointer border-b
         hover:opacity-80 hover:shadow-lg transition duration-300 
         ease-out">
-            <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0">
+            <div className="relative h-24 w-40 md:h-52 md:w-80 flex-shrink-0 ">
                 <Image className="rounded-2xl"
                     src={img} layout="fill"
                     objectFit="cover"
