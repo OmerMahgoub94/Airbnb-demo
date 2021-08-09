@@ -7,3 +7,11 @@
         active:bg-gray-100 transition transform duration-100 ease-out;
   }
 }
+
+.mapboxgl-popup-content {
+  background-color: transparent !important;
+}
+
+.mapboxgl-popup-close-button {
+  display: none !important;
+}

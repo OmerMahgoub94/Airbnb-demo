@@ -29,7 +29,6 @@ function InfoCard({ img, location, title, description, star, price, total }) {
                         {star}
                     </p>
 
-
                     <div>
                         <p className="text-lg font-bold lg:text-2xl">
                             {price}
@@ -38,9 +37,6 @@ function InfoCard({ img, location, title, description, star, price, total }) {
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     )
 }
