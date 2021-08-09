@@ -30,7 +30,7 @@ function Map({ searchResults }) {
     return (
         <ReactMapGL
             mapStyle='mapbox://styles/yabani/cks33tuux7jcy18qgd76wqjgw'
-            mapboxApiAccessToken={process.env.mapbox_key}
+            mapboxApiAccessToken={process.env.mapboxKey}
             {...viewport}
             onViewportChange={(viewport) => setViewport(viewport)}
         >
