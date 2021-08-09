@@ -28,7 +28,7 @@ function Map({ searchResults }) {
     console.log('selected', selectedLocation)
 
     return (
-        <ReactMapGL
+        <ReactMapGL onClick={() => setSelectedLocation({})}
             mapStyle='mapbox://styles/yabani/cks33tuux7jcy18qgd76wqjgw'
             mapboxApiAccessToken={process.env.mapboxKey}
             {...viewport}
